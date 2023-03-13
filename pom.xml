@@ -3,9 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.han-yaeger</groupId>
-    <artifactId>tutorial</artifactId>
+    <artifactId>Gyaraga</artifactId>
     <version>2021.2022.1</version>
-    <name>Yaeger tutorial: Waterworld</name>
+    <name>Gyaraga</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -36,7 +36,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.github.hanyaeger.tutorial.Waterworld</mainClass>
+                    <mainClass>com.github.hanyaeger.Gyaraga.Waterworld</mainClass>
                 </configuration>
             </plugin>
         </plugins>
