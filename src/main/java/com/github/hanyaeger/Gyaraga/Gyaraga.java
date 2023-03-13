@@ -8,7 +8,7 @@ import com.github.hanyaeger.api.YaegerGame;
 public class Gyaraga extends YaegerGame {
     public static void main(String[] args){
         launch(args);
-
+        //balls
     }
 
     @Override
