@@ -2,7 +2,7 @@ package com.github.hanyaeger.Gyaraga.scenes;
 
 
 import com.github.hanyaeger.Gyaraga.Gyaraga;
-import com.github.hanyaeger.Gyaraga.entities.buttons.StartButton;
+import com.github.hanyaeger.Gyaraga.entities.buttons.LevelButton;
 import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.StaticScene;
@@ -23,7 +23,7 @@ public class LevelSelect extends StaticScene {
 
     @Override
     public void setupEntities(){
-        var startButton = new StartButton
+        var startButton = new LevelButton.StartButton
                 (new Coordinate2D(getWidth() / 2, (getHeight() / 2) + 100), gyaraga);
         startButton.setAnchorPoint(AnchorPoint.CENTER_CENTER);
         addEntity(startButton);
