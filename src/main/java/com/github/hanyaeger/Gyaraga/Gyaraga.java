@@ -1,4 +1,5 @@
 package com.github.hanyaeger.Gyaraga;
+import com.github.hanyaeger.Gyaraga.scenes.WeaponSelect;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.Gyaraga.scenes.LevelSelect;
@@ -19,7 +20,7 @@ public class Gyaraga extends YaegerGame {
     @Override
     public void setupScenes() {
         addScene(0, new LevelSelect(this));
-//        addScene(1, new GameLevel());
+        addScene(1, new WeaponSelect());
 //        addScene(2, new EndScreen(this));
     }
 

@@ -12,31 +12,33 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-public class LevelButton {
-    public static class StartButton extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
-        private Gyaraga gyaraga;
-        public StartButton(Coordinate2D initialLocation, Gyaraga gyaraga){
-            super(initialLocation,"*-=- Start -=-*");
-            this.gyaraga = gyaraga;
-            setFill(Color.PURPLE);
-            setFont(Font.font("Roboto", FontWeight.BOLD, 30));
-        }
+public class LevelButton extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
 
-        @Override
-        public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-            gyaraga.setActiveScene(1);
+    private Gyaraga gyaraga;
+    public String Nlev;
 
-        }
-        @Override
-        public void onMouseEntered(){
-            setFill(Color.VIOLET);
-            setCursor(Cursor.HAND);
-        }
 
-        @Override
-        public void onMouseExited(){
-            setFill(Color.PURPLE);
-            setCursor(Cursor.DEFAULT);
-        }
+    public LevelButton(Coordinate2D initialLocation, Gyaraga gyaraga, String levelNR){
+        super(initialLocation,levelNR);
+        Nlev = levelNR;
+        this.gyaraga = gyaraga;
+        setFill(Color.WHITE);
+        setFont(Font.font("Roboto", FontWeight.BOLD, 30));
+    }
+
+    @Override
+    public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
+        System.out.println("Level " + Nlev);
+    }
+    @Override
+    public void onMouseEntered(){
+        setFill(Color.WHITESMOKE);
+        setCursor(Cursor.HAND);
+    }
+
+    @Override
+    public void onMouseExited(){
+        setFill(Color.WHITE);
+        setCursor(Cursor.DEFAULT);
     }
 }
