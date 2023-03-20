@@ -17,6 +17,7 @@ public class LevelButton extends TextEntity implements MouseButtonPressedListene
     private Gyaraga gyaraga;
     public String Slev;
     public int NLev;
+    public int levelNumber;
 
 
     public LevelButton(Coordinate2D initialLocation, Gyaraga gyaraga, String levelNR){
@@ -26,13 +27,44 @@ public class LevelButton extends TextEntity implements MouseButtonPressedListene
 
         this.gyaraga = gyaraga;
         setFill(Color.WHITE);
-        setFont(Font.font("Roboto", FontWeight.BOLD, 30));
+        setFont(Font.font("OCR A Extended", FontWeight.BOLD, 30));
     }
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        System.out.println("Level " + Slev);
+        switch (NLev) {
+            case 1 -> {
+                System.out.println("Level 1");
+                levelNumber = 1;
+                goToWeaponSelect();
+            }
+            case 2 -> {
+                System.out.println("Level 2");
+                levelNumber = 4;
+                goToWeaponSelect();
+            }
+            case 3 -> {
+                System.out.println("Level 3");
+                levelNumber = 3;
+                goToWeaponSelect();
+            }
+            case 4 -> {
+                System.out.println("Level 4");
+                levelNumber = 4;
+                goToWeaponSelect();
+            }
+            case 5 -> {
+                System.out.println("Level 5");
+                levelNumber = 5;
+                goToWeaponSelect();
+            }
+        }
     }
+
+    private void goToWeaponSelect() {
+        gyaraga.setActiveScene(1);
+    }
+
     @Override
     public void onMouseEntered(){
         setFill(Color.WHITESMOKE);
@@ -43,5 +75,9 @@ public class LevelButton extends TextEntity implements MouseButtonPressedListene
     public void onMouseExited(){
         setFill(Color.WHITE);
         setCursor(Cursor.DEFAULT);
+    }
+
+    public int getLevelNumber() {
+        return levelNumber;
     }
 }
