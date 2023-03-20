@@ -15,12 +15,15 @@ import javafx.scene.text.FontWeight;
 public class LevelButton extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
 
     private Gyaraga gyaraga;
-    public String Nlev;
+    public String Slev;
+    public int NLev;
 
 
     public LevelButton(Coordinate2D initialLocation, Gyaraga gyaraga, String levelNR){
         super(initialLocation,levelNR);
-        Nlev = levelNR;
+        Slev = levelNR;
+        NLev = Integer.parseInt(levelNR);
+
         this.gyaraga = gyaraga;
         setFill(Color.WHITE);
         setFont(Font.font("Roboto", FontWeight.BOLD, 30));
@@ -28,7 +31,7 @@ public class LevelButton extends TextEntity implements MouseButtonPressedListene
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        System.out.println("Level " + Nlev);
+        System.out.println("Level " + Slev);
     }
     @Override
     public void onMouseEntered(){
