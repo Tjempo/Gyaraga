@@ -22,7 +22,7 @@ public class Gyaraga extends YaegerGame {
     @Override
     public void setupScenes() {
         addScene(0, new LevelSelect(this));
-        addScene(1, new WeaponSelect());
+        addScene(1, new WeaponSelect(this));
         addScene(2, new GameLevel1());
 //        addScene(3, new GameLevel2());
 //        addScene(4, new GameLevel3());

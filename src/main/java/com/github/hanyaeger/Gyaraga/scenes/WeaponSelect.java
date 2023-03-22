@@ -10,10 +10,10 @@ import com.github.hanyaeger.api.scenes.StaticScene;
 
 public class WeaponSelect extends StaticScene {
 
-    private Gyaraga gyaraga;
+    protected Gyaraga gyaraga;
     private final int aantalWapens = 3;
 
-    public void weaponSelect (Gyaraga gyaraga){
+    public WeaponSelect(Gyaraga gyaraga){
         this.gyaraga = gyaraga;
     }
 
@@ -36,7 +36,7 @@ public class WeaponSelect extends StaticScene {
         addEntity(quitButton);
 
         var backButton = new BackButton
-                (new Coordinate2D(getWidth() - 40, getHeight() - 40), gyaraga);
+                (new Coordinate2D(getWidth() - 80, getHeight() - 40), gyaraga);
         addEntity(backButton);
     }
 }
