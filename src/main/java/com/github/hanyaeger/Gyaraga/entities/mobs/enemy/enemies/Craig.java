@@ -2,11 +2,14 @@ package com.github.hanyaeger.Gyaraga.entities.mobs.enemy.enemies;
 
 import com.github.hanyaeger.Gyaraga.entities.mobs.enemy.Enemy;
 import com.github.hanyaeger.Gyaraga.entities.projectile.Projectile;
+import com.github.hanyaeger.Gyaraga.entities.projectile.weapons.Laser;
 import com.github.hanyaeger.api.Coordinate2D;
 
 public class Craig extends Enemy {
-    public Craig(String spriteDir, Coordinate2D location, int health, Projectile weapon) {
-        super("", location, health, weapon);
+    public Craig(Coordinate2D location) {
+        super("sprites/craig.png", location);
+        this.health = 20;
+        this.weapon = new Laser();
     }
 
     @Override

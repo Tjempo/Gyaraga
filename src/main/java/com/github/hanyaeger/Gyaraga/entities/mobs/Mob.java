@@ -9,18 +9,17 @@ import javafx.scene.Node;
 
 import java.util.Optional;
 
-public abstract class Mob extends DynamicSpriteEntity implements Collided{
-    protected Coordinate2D location;
+public class Mob extends DynamicSpriteEntity implements Collided{
     public int health;
     protected Projectile weapon;
 
-    public Mob(String spriteDir, Coordinate2D location, int health, Projectile weapon) {
+    public Mob(String spriteDir, Coordinate2D location) {
         super(spriteDir, location);
-        this.health = health;
-        this.weapon = weapon;
     }
 
-    public abstract void shootProjectile();
+    public void shootProjectile(){
+        weapon.shoot(getLocationInScene());
+    }
 
     @Override
     public void onCollision(Collider collider) {

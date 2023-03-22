@@ -5,7 +5,7 @@ import com.github.hanyaeger.Gyaraga.entities.projectile.Projectile;
 import com.github.hanyaeger.api.Coordinate2D;
 
 public class Ball extends Projectile {
-    public Ball(Coordinate2D location) {
-        super("", location, 5);
+    public Ball() {
+        super("", 5, 4);
     }
 }

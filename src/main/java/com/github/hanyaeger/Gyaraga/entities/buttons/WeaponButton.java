@@ -1,6 +1,10 @@
 package com.github.hanyaeger.Gyaraga.entities.buttons;
 
 import com.github.hanyaeger.Gyaraga.Gyaraga;
+import com.github.hanyaeger.Gyaraga.entities.projectile.Projectile;
+import com.github.hanyaeger.Gyaraga.entities.projectile.weapons.Laser;
+import com.github.hanyaeger.Gyaraga.entities.projectile.weapons.Rocket;
+import com.github.hanyaeger.Gyaraga.entities.projectile.weapons.Shell;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
@@ -14,14 +18,12 @@ import javafx.scene.text.FontWeight;
 
 public class WeaponButton extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
     private Gyaraga gyaraga;
-    private int selectedWeapon;
     public int WeaponNumber;
 
 
     public WeaponButton(Coordinate2D initialLocation, Gyaraga gyaraga, String weaponNR) {
         super(initialLocation, weaponNR);
-        WeaponNumber = Integer.parseInt(weaponNR);
-
+        this.WeaponNumber = Integer.parseInt(weaponNR);
         this.gyaraga = gyaraga;
         setFill(Color.WHITE);
         setFont(Font.font("Roboto", FontWeight.BOLD, 30));
@@ -32,15 +34,15 @@ public class WeaponButton extends TextEntity implements MouseButtonPressedListen
         switch (WeaponNumber) {
             case 1:
                 System.out.println("Selected Weapon: Laser");
-                selectedWeapon = 1;
+                gyaraga.selectedWeapon = new Laser();
                 break;
             case 2:
                 System.out.println("Selected Weapon: Shotgun");
-                selectedWeapon = 2;
+                gyaraga.selectedWeapon = new Shell();
                 break;
             case 3:
                 System.out.println("Selected Weapon: Rocket");
-                selectedWeapon = 3;
+                gyaraga.selectedWeapon = new Rocket();
                 break;
         }
     }
@@ -54,10 +56,6 @@ public class WeaponButton extends TextEntity implements MouseButtonPressedListen
     public void onMouseExited(){
         setFill(Color.WHITE);
         setCursor(Cursor.DEFAULT);
-    }
-
-    public int getSelectedWeapon() {
-        return selectedWeapon;
     }
 }
 

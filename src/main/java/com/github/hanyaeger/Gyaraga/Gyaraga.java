@@ -1,10 +1,11 @@
 package com.github.hanyaeger.Gyaraga;
 
+import com.github.hanyaeger.Gyaraga.entities.projectile.Projectile;
 import com.github.hanyaeger.Gyaraga.scenes.GameLevel1;
+import com.github.hanyaeger.Gyaraga.scenes.LevelSelect;
 import com.github.hanyaeger.Gyaraga.scenes.WeaponSelect;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
-import com.github.hanyaeger.Gyaraga.scenes.LevelSelect;
 
 
 
@@ -12,6 +13,8 @@ public class Gyaraga extends YaegerGame {
     public static void main(String[] args){
         launch(args);
     }
+
+    public Projectile selectedWeapon;
 
     @Override
     public void setupGame() {
@@ -23,11 +26,11 @@ public class Gyaraga extends YaegerGame {
     public void setupScenes() {
         addScene(0, new LevelSelect(this));
         addScene(1, new WeaponSelect(this));
-        addScene(2, new GameLevel1());
+        addScene(2, new GameLevel1(this));
 //        addScene(3, new GameLevel2());
 //        addScene(4, new GameLevel3());
 //        addScene(5, new GameLevel4());
-//        addScene(5, new GameLevel4()); //Boss level
+//        addScene(5, new GameLevel5()); //Boss level
 //        addScene(6, new EndScreen()); //End Screen
     }
 

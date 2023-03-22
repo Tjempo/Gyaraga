@@ -3,7 +3,9 @@ package com.github.hanyaeger.Gyaraga.scenes;
 import com.github.hanyaeger.Gyaraga.Gyaraga;
 import com.github.hanyaeger.Gyaraga.entities.buttons.BackButton;
 import com.github.hanyaeger.Gyaraga.entities.buttons.QuitButton;
+import com.github.hanyaeger.Gyaraga.entities.buttons.StartButton;
 import com.github.hanyaeger.Gyaraga.entities.buttons.WeaponButton;
+import com.github.hanyaeger.Gyaraga.entities.mobs.Player;
 import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.StaticScene;
@@ -38,6 +40,14 @@ public class WeaponSelect extends StaticScene {
         var backButton = new BackButton
                 (new Coordinate2D(getWidth() - 80, getHeight() - 40), gyaraga);
         addEntity(backButton);
+
+        var startButton = new StartButton
+                (new Coordinate2D(getWidth() / 2, (getHeight() / 2) + 100), gyaraga);
+        startButton.setAnchorPoint(AnchorPoint.CENTER_CENTER);
+        addEntity(startButton);
+
+
     }
+
 }
 

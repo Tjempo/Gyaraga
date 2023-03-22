@@ -34,11 +34,6 @@ public class LevelSelect extends StaticScene {
             addEntity(levelButton);
         }
 
-        var startButton = new StartButton
-                (new Coordinate2D(getWidth() / 2, (getHeight() / 2) + 100), gyaraga);
-        startButton.setAnchorPoint(AnchorPoint.CENTER_CENTER);
-        addEntity(startButton);
-
         var quitButton = new QuitButton
                 (new Coordinate2D(10, getHeight() - 40), gyaraga);
         addEntity(quitButton);
