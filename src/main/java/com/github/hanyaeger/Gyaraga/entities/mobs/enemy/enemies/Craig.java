@@ -7,9 +7,8 @@ import com.github.hanyaeger.api.Coordinate2D;
 
 public class Craig extends Enemy {
     public Craig(Coordinate2D location) {
-        super("sprites/craig.png", location);
-        this.health = 20;
-        this.weapon = new Laser();
+        super("sprites/craig.png", location, new Laser(false));
+        health = 20;
     }
 
     @Override

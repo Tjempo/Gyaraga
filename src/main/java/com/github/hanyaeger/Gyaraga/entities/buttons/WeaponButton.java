@@ -34,15 +34,15 @@ public class WeaponButton extends TextEntity implements MouseButtonPressedListen
         switch (WeaponNumber) {
             case 1:
                 System.out.println("Selected Weapon: Laser");
-                gyaraga.selectedWeapon = new Laser();
+                gyaraga.selectedWeapon = new Laser(true);
                 break;
             case 2:
                 System.out.println("Selected Weapon: Shotgun");
-                gyaraga.selectedWeapon = new Shell();
+                gyaraga.selectedWeapon = new Shell(true);
                 break;
             case 3:
                 System.out.println("Selected Weapon: Rocket");
-                gyaraga.selectedWeapon = new Rocket();
+                gyaraga.selectedWeapon = new Rocket(true);
                 break;
         }
     }

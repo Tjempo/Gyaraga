@@ -5,5 +5,7 @@ import com.github.hanyaeger.Gyaraga.entities.projectile.Projectile;
 import com.github.hanyaeger.api.Coordinate2D;
 
 public class Laser extends Projectile {
-    public Laser() { super("sprites/laserBullet.png", 10, 5); }
+    public Laser(boolean firedByPlayer) {
+        super("sprites/laserBullet.png", 10, 5, firedByPlayer);
+    }
 }

@@ -5,7 +5,7 @@ import com.github.hanyaeger.Gyaraga.entities.projectile.Projectile;
 import com.github.hanyaeger.api.Coordinate2D;
 
 public class Shell extends Projectile {
-    public Shell() {
-        super("", 5, 5);
+    public Shell(boolean firedByPlayer) {
+        super("", 5, 5, firedByPlayer);
     }
 }

@@ -6,10 +6,10 @@ import com.github.hanyaeger.Gyaraga.entities.projectile.weapons.Laser;
 import com.github.hanyaeger.api.Coordinate2D;
 
 public class Aegi extends Enemy {
-    public Aegi(String spriteDir, Coordinate2D location, int health, Projectile weapon) {
-        super("sprites/aegi.png", location);
+    public Aegi(String spriteDir, Coordinate2D location, int health) {
+        super("sprites/aegi.png", location, null);
         this.health = 20;
-        this.weapon = new Laser();
+        this.weapon = new Laser(false);
     }
 
     @Override

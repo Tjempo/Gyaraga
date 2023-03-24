@@ -16,11 +16,10 @@ public class Player extends Mob implements KeyListener, SceneBorderTouchingWatch
     //private HealthText healthText;
 
     public Player(Coordinate2D location, Projectile weapon) {
-        super("sprites/spaceship.png", location);
+        super("sprites/spaceship.png", location, weapon);
         setMotion(2, 270d);
         this.health = 100;
-        this.weapon = weapon;
-        weapon.setDirection(0d);
+        weapon.setDirection(180d);
 
         //this.healthText = healthText;
     }

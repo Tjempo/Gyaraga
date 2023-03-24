@@ -12,11 +12,9 @@ import com.github.hanyaeger.api.scenes.DynamicScene;
 
 public class GameLevel1 extends DynamicScene{
     private Gyaraga gyaraga;
-    private Projectile playerWeapon;
 
     public GameLevel1(Gyaraga gyaraga) {
         this.gyaraga = gyaraga;
-        this.playerWeapon = gyaraga.selectedWeapon;
     }
 
     @Override
@@ -34,11 +32,14 @@ public class GameLevel1 extends DynamicScene{
                 (new Coordinate2D(10, getHeight() - 80));
         addEntity(scoreText);
 
-        System.out.println(playerWeapon);
-        var player = new Player(new Coordinate2D(getWidth() / 2, getHeight() - 100 ), playerWeapon);
+        System.out.println(gyaraga.selectedWeapon);
+        var player = new Player
+                (new Coordinate2D(getWidth() / 2, getHeight() - 100 ), gyaraga.selectedWeapon);
         addEntity(player);
+        addEntity(gyaraga.selectedWeapon);
 
-        var craig = new Craig(new Coordinate2D(getWidth() / 2, getHeight() / 2 + 100));
+        var craig = new Craig
+                (new Coordinate2D(getWidth() / 2, getHeight() / 2 + 100));
         addEntity(craig);
     }
 }

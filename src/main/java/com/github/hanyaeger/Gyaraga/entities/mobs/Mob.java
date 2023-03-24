@@ -13,21 +13,19 @@ public class Mob extends DynamicSpriteEntity implements Collided{
     public int health;
     protected Projectile weapon;
 
-    public Mob(String spriteDir, Coordinate2D location) {
+    public Mob(String spriteDir, Coordinate2D location, Projectile weapon) {
         super(spriteDir, location);
+        this.weapon = weapon;
     }
 
     public void shootProjectile(){
+//        System.out.println("Shoot @" + getLocationInScene());
+//        System.out.println("Weapon:" + weapon);
         weapon.shoot(getLocationInScene());
     }
 
     @Override
     public void onCollision(Collider collider) {
         ((Projectile)collider).hitMob(this);
-    }
-
-    @Override
-    public Optional<? extends Node> getNode() {
-        return Optional.empty();
     }
 }
