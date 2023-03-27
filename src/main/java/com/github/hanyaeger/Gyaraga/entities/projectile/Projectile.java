@@ -7,17 +7,17 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
+import com.github.hanyaeger.api.media.SoundClip;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 
 
 public class Projectile extends DynamicSpriteEntity implements Collider, SceneBorderCrossingWatcher {
     protected int damage;
     protected int speed;
-    protected String spriteDir;
     public boolean firedByPlayer;
 
-    public Projectile(String spriteDir, int damage, int speed, boolean firedByPlayer) {
-        super(spriteDir, new Coordinate2D(-50, -50));
+    public Projectile(String spriteDir, int damage, int speed, boolean firedByPlayer, int rows, int colums) {
+        super(spriteDir, new Coordinate2D(-50, -50), rows, colums);
         this.damage = damage;
         this.speed = speed;
         this.firedByPlayer = firedByPlayer;
@@ -26,8 +26,13 @@ public class Projectile extends DynamicSpriteEntity implements Collider, SceneBo
     public void hitMob(Mob mob) {
         if ((firedByPlayer == true && mob instanceof Enemy) || (firedByPlayer == false && mob instanceof Player)) {
             mob.health -= damage;
+
             System.out.print("MOB HP:");
             System.out.println(mob.health);
+
+            var boomSound = new SoundClip("audio/vineBoom.mp3");
+            boomSound.play();
+
             this.remove();
         }
         if (mob.health < 1) {
@@ -39,6 +44,9 @@ public class Projectile extends DynamicSpriteEntity implements Collider, SceneBo
         setAnchorLocation(location);
         System.out.println(location);
         System.out.println(speed);
+        if (ProjectileFactory.getProjectileType(this) == ProjectileType.SHELL) {
+
+        }
         if (firedByPlayer) {
             setMotion(speed, 180d);
         } else {

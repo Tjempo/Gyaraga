@@ -8,7 +8,7 @@ import com.github.hanyaeger.Gyaraga.entities.projectile.weapons.Laser;
 import com.github.hanyaeger.api.Coordinate2D;
 
 public class Dropper extends Enemy {
-    public Dropper(String spriteDir, Coordinate2D location, int health) {
+    public Dropper(Coordinate2D location) {
         super("sprites/dropper.png", location, ProjectileType.BALL);
         this.health = 20;
     }

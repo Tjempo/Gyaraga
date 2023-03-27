@@ -29,7 +29,7 @@ public class LevelSelect extends StaticScene {
 
         for(int i = 0; i < aantalLevels; i++) {
             var levelButton = new LevelButton
-                    (new Coordinate2D(20 * (i + 1) + (75 * i + 1), 400), gyaraga, Integer.toString(i + 1));
+                    (new Coordinate2D(30 * (i + 1) + (75 * i), 400), gyaraga, Integer.toString(i + 1));
             levelButton.setAnchorPoint(AnchorPoint.CENTER_CENTER);
             addEntity(levelButton);
         }

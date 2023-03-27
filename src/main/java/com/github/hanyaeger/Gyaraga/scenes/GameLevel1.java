@@ -3,7 +3,10 @@ package com.github.hanyaeger.Gyaraga.scenes;
 import com.github.hanyaeger.Gyaraga.Gyaraga;
 import com.github.hanyaeger.Gyaraga.entities.buttons.WeaponButton;
 import com.github.hanyaeger.Gyaraga.entities.mobs.Player;
+import com.github.hanyaeger.Gyaraga.entities.mobs.enemy.enemies.Aegi;
+import com.github.hanyaeger.Gyaraga.entities.mobs.enemy.enemies.Bomber;
 import com.github.hanyaeger.Gyaraga.entities.mobs.enemy.enemies.Craig;
+import com.github.hanyaeger.Gyaraga.entities.mobs.enemy.enemies.Dropper;
 import com.github.hanyaeger.Gyaraga.entities.projectile.Projectile;
 import com.github.hanyaeger.Gyaraga.entities.text.HealthText;
 import com.github.hanyaeger.Gyaraga.entities.text.ScoreText;
@@ -46,5 +49,17 @@ public class GameLevel1 extends DynamicScene{
         var craig = new Craig
                 (new Coordinate2D(getWidth() / 2, getHeight() / 2 + 100));
         addEntity(craig);
+
+        var bomber = new Bomber
+                (new Coordinate2D(getWidth() / 3, getHeight() / 2));
+        addEntity(bomber);
+
+        var aegi = new Aegi
+                (new Coordinate2D(getWidth() / 4, getHeight() / 2 - 100));
+        addEntity(aegi);
+
+        var dropper = new Dropper
+                (new Coordinate2D(getWidth() / 2, getHeight() / 2 - 200));
+        addEntity(dropper);
     }
 }

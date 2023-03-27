@@ -8,7 +8,7 @@ import com.github.hanyaeger.Gyaraga.entities.projectile.weapons.Laser;
 import com.github.hanyaeger.api.Coordinate2D;
 
 public class Bomber extends Enemy {
-    public Bomber(String spriteDir, Coordinate2D location) {
+    public Bomber(Coordinate2D location) {
         super("sprites/bomber.png", location, ProjectileType.EXPLOSION);
         this.health = 20;
     }

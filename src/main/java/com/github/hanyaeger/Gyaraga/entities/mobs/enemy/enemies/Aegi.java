@@ -8,7 +8,7 @@ import com.github.hanyaeger.Gyaraga.entities.projectile.weapons.Laser;
 import com.github.hanyaeger.api.Coordinate2D;
 
 public class Aegi extends Enemy {
-    public Aegi(String spriteDir, Coordinate2D location, int health) {
+    public Aegi(Coordinate2D location) {
         super("sprites/aegi.png", location, ProjectileType.LASER);
         this.health = 20;
     }

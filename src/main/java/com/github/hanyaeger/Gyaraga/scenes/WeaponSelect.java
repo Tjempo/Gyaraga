@@ -28,9 +28,16 @@ public class WeaponSelect extends StaticScene {
     public void setupEntities(){
         for(int i = 0; i < aantalWapens; i++) {
             var weaponButton = new WeaponButton
-                    (new Coordinate2D(50 * (i + 1) + (100 * i), 400), gyaraga, Integer.toString(i + 1));
+                    (new Coordinate2D(80 * (i + 1) + (75 * i), 400), gyaraga, Integer.toString(i + 1));
             weaponButton.setAnchorPoint(AnchorPoint.CENTER_CENTER);
             addEntity(weaponButton);
+             if(i == 0){
+
+            }else if(i == 1){
+
+            }else if(i == 2){
+
+            }
         }
 
         var quitButton = new QuitButton

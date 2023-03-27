@@ -7,6 +7,7 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.Direction;
 import com.github.hanyaeger.api.entities.SceneBorderTouchingWatcher;
+import com.github.hanyaeger.api.media.SoundClip;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
@@ -34,6 +35,8 @@ public class Player extends Mob implements KeyListener, SceneBorderTouchingWatch
             setCurrentFrameIndex(1);
         } else if (pressedKeys.contains(KeyCode.UP)) {
             shootProjectile(this);
+            var shootSound = new SoundClip("audio/laserSound.mp3");
+            shootSound.play();
         }
     }
 
