@@ -10,7 +10,7 @@ public class HealthText extends TextEntity {
     public HealthText(Coordinate2D initialLocation){
         super(initialLocation);
 
-        setFont(Font.font("Roboto", FontWeight.NORMAL, 30));
+        setFont(Font.font("OCR A Extended", FontWeight.NORMAL, 30));
         setFill(Color.WHITE);
         setStrokeWidth(3);
         setStrokeColor(Color.BLACK);

@@ -20,9 +20,4 @@ public class Shield extends Enemy {
     public void execMovePattern() {
 
     }
-
-    @Override
-    public void shootProjectile() {
-
-    }
 }

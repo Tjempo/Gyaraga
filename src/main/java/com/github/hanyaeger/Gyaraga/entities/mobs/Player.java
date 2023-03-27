@@ -1,6 +1,7 @@
 package com.github.hanyaeger.Gyaraga.entities.mobs;
 
 import com.github.hanyaeger.Gyaraga.entities.projectile.Projectile;
+import com.github.hanyaeger.Gyaraga.entities.projectile.ProjectileType;
 import com.github.hanyaeger.Gyaraga.entities.text.HealthText;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collider;
@@ -15,11 +16,10 @@ import java.util.Set;
 public class Player extends Mob implements KeyListener, SceneBorderTouchingWatcher{
     //private HealthText healthText;
 
-    public Player(Coordinate2D location, Projectile weapon) {
+    public Player(Coordinate2D location, ProjectileType weapon) {
         super("sprites/spaceship.png", location, weapon);
         setMotion(2, 270d);
         this.health = 100;
-        weapon.setDirection(180d);
 
         //this.healthText = healthText;
     }
@@ -33,7 +33,7 @@ public class Player extends Mob implements KeyListener, SceneBorderTouchingWatch
             setMotion(3, 90d);
             setCurrentFrameIndex(1);
         } else if (pressedKeys.contains(KeyCode.UP)) {
-            shootProjectile();
+            shootProjectile(this);
         }
     }
 

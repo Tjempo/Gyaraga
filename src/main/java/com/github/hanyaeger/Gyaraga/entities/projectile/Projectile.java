@@ -5,15 +5,16 @@ import com.github.hanyaeger.Gyaraga.entities.mobs.Player;
 import com.github.hanyaeger.Gyaraga.entities.mobs.enemy.Enemy;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collider;
-import com.github.hanyaeger.api.entities.Direction;
+import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
-import javafx.scene.Node;
+import com.github.hanyaeger.api.scenes.SceneBorder;
 
 
-public class Projectile extends DynamicSpriteEntity implements Collider{
+public class Projectile extends DynamicSpriteEntity implements Collider, SceneBorderCrossingWatcher {
     protected int damage;
     protected int speed;
-    protected boolean firedByPlayer;
+    protected String spriteDir;
+    public boolean firedByPlayer;
 
     public Projectile(String spriteDir, int damage, int speed, boolean firedByPlayer) {
         super(spriteDir, new Coordinate2D(-50, -50));
@@ -25,18 +26,24 @@ public class Projectile extends DynamicSpriteEntity implements Collider{
     public void hitMob(Mob mob) {
         if ((firedByPlayer == true && mob instanceof Enemy) || (firedByPlayer == false && mob instanceof Player)) {
             mob.health -= damage;
+            System.out.print("MOB HP:");
             System.out.println(mob.health);
-            setAnchorLocation(new Coordinate2D(-50, -50));
+            this.remove();
         }
         if (mob.health < 1) {
             mob.remove();
-            System.out.println("");
         }
     }
 
     public void shoot(Coordinate2D location){
         setAnchorLocation(location);
-        setMotion(speed, this.getDirection());
+        System.out.println(location);
+        System.out.println(speed);
+        if (firedByPlayer) {
+            setMotion(speed, 180d);
+        } else {
+            setMotion(speed, 0d);
+        }
     }
 
     @Override
@@ -45,5 +52,10 @@ public class Projectile extends DynamicSpriteEntity implements Collider{
                 "damage=" + damage +
                 ", speed=" + speed +
                 '}';
+    }
+
+    @Override
+    public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
+        this.remove();
     }
 }

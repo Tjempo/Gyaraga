@@ -2,6 +2,7 @@ package com.github.hanyaeger.Gyaraga.entities.buttons;
 
 import com.github.hanyaeger.Gyaraga.Gyaraga;
 import com.github.hanyaeger.Gyaraga.entities.projectile.Projectile;
+import com.github.hanyaeger.Gyaraga.entities.projectile.ProjectileType;
 import com.github.hanyaeger.Gyaraga.entities.projectile.weapons.Laser;
 import com.github.hanyaeger.Gyaraga.entities.projectile.weapons.Rocket;
 import com.github.hanyaeger.Gyaraga.entities.projectile.weapons.Shell;
@@ -26,7 +27,7 @@ public class WeaponButton extends TextEntity implements MouseButtonPressedListen
         this.WeaponNumber = Integer.parseInt(weaponNR);
         this.gyaraga = gyaraga;
         setFill(Color.WHITE);
-        setFont(Font.font("Roboto", FontWeight.BOLD, 30));
+        setFont(Font.font("OCR A Extended", FontWeight.BOLD, 30));
     }
 
     @Override
@@ -34,15 +35,15 @@ public class WeaponButton extends TextEntity implements MouseButtonPressedListen
         switch (WeaponNumber) {
             case 1:
                 System.out.println("Selected Weapon: Laser");
-                gyaraga.selectedWeapon = new Laser(true);
+                gyaraga.selectedWeapon = ProjectileType.LASER;
                 break;
             case 2:
                 System.out.println("Selected Weapon: Shotgun");
-                gyaraga.selectedWeapon = new Shell(true);
+                gyaraga.selectedWeapon = ProjectileType.SHELL;
                 break;
             case 3:
                 System.out.println("Selected Weapon: Rocket");
-                gyaraga.selectedWeapon = new Rocket(true);
+                gyaraga.selectedWeapon = ProjectileType.ROCKET;
                 break;
         }
     }

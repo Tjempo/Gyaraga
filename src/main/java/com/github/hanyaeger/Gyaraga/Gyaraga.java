@@ -1,6 +1,7 @@
 package com.github.hanyaeger.Gyaraga;
 
 import com.github.hanyaeger.Gyaraga.entities.projectile.Projectile;
+import com.github.hanyaeger.Gyaraga.entities.projectile.ProjectileType;
 import com.github.hanyaeger.Gyaraga.entities.projectile.weapons.Laser;
 import com.github.hanyaeger.Gyaraga.scenes.GameLevel1;
 import com.github.hanyaeger.Gyaraga.scenes.LevelSelect;
@@ -15,7 +16,7 @@ public class Gyaraga extends YaegerGame {
         launch(args);
     }
 
-    public Projectile selectedWeapon = new Laser(true);
+    public ProjectileType selectedWeapon = ProjectileType.LASER;
 
     @Override
     public void setupGame() {

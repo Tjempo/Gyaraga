@@ -20,7 +20,7 @@ public class BackButton extends TextEntity implements MouseButtonPressedListener
         super(initialLocation,"Back");
         this.gyaraga = gyaraga;
         setFill(Color.GRAY);
-        setFont(Font.font("Roboto", FontWeight.BOLD, 30));
+        setFont(Font.font("OCR A Extended", FontWeight.BOLD, 30));
     }
 
     @Override

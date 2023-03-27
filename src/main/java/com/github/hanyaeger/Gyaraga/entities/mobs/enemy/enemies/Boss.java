@@ -9,7 +9,6 @@ public class Boss extends Enemy {
     public Boss(String spriteDir, Coordinate2D location, int health) {
         super("", location, null);
         this.health = 200;
-//        this.weapon = new Laser();
     }
 
     @Override
@@ -19,11 +18,6 @@ public class Boss extends Enemy {
 
     @Override
     public void execMovePattern() {
-
-    }
-
-    @Override
-    public void shootProjectile() {
 
     }
 }

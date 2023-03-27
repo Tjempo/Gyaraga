@@ -8,14 +8,20 @@ import com.github.hanyaeger.Gyaraga.entities.projectile.Projectile;
 import com.github.hanyaeger.Gyaraga.entities.text.HealthText;
 import com.github.hanyaeger.Gyaraga.entities.text.ScoreText;
 import com.github.hanyaeger.api.Coordinate2D;
+import com.github.hanyaeger.api.entities.YaegerEntity;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 
 public class GameLevel1 extends DynamicScene{
     private Gyaraga gyaraga;
+    public static GameLevel1 instance;
 
     public GameLevel1(Gyaraga gyaraga) {
         this.gyaraga = gyaraga;
+        instance = this;
     }
+
+    @Override
+    public void addEntity(YaegerEntity entity) {super.addEntity(entity);}
 
     @Override
     public void setupScene(){
@@ -36,7 +42,6 @@ public class GameLevel1 extends DynamicScene{
         var player = new Player
                 (new Coordinate2D(getWidth() / 2, getHeight() - 100 ), gyaraga.selectedWeapon);
         addEntity(player);
-        addEntity(gyaraga.selectedWeapon);
 
         var craig = new Craig
                 (new Coordinate2D(getWidth() / 2, getHeight() / 2 + 100));
