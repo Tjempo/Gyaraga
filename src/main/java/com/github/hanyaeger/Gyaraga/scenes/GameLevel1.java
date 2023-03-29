@@ -3,8 +3,6 @@ package com.github.hanyaeger.Gyaraga.scenes;
 import com.github.hanyaeger.Gyaraga.Gyaraga;
 import com.github.hanyaeger.Gyaraga.entities.mobs.Player;
 import com.github.hanyaeger.Gyaraga.entities.mobs.enemy.enemies.Craig;
-import com.github.hanyaeger.Gyaraga.entities.text.HealthText;
-import com.github.hanyaeger.Gyaraga.entities.text.ScoreText;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.YaegerEntity;
 
@@ -25,13 +23,6 @@ public class GameLevel1 extends GameLevel {
 
     @Override
     public void setupEntities(){
-        super.setupEntities();
-        var healthText = new HealthText(new Coordinate2D(20,20));
-        addEntity(healthText);
-
-        var scoreText = new ScoreText
-                (new Coordinate2D(10, getHeight() - 80));
-        addEntity(scoreText);
 
         player = new Player
                 (new Coordinate2D(getWidth() / 2, getHeight() - 100 ), gyaraga.selectedWeapon);

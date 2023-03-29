@@ -3,7 +3,7 @@ package com.github.hanyaeger.Gyaraga.entities.projectile.weapons;
 import com.github.hanyaeger.api.Timer;
 
 public class ExplosionTimer extends Timer {
-    Explosion explosion;
+    private Explosion explosion;
 
     public ExplosionTimer(Explosion explosion) {
         super(350);

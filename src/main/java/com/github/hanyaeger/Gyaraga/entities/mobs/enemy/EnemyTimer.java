@@ -4,7 +4,7 @@ import com.github.hanyaeger.Gyaraga.entities.mobs.enemy.enemies.Aegi;
 import com.github.hanyaeger.api.Timer;
 
 public class EnemyTimer extends Timer {
-    Enemy enemy;
+    private Enemy enemy;
 
     public EnemyTimer(Enemy enemy) {
         super(500);
@@ -17,7 +17,7 @@ public class EnemyTimer extends Timer {
         if (enemy instanceof Aegi) {
             enemy.execAbility();
         } else {
-            System.out.println("ENEMY SCHIEEEET");
+            System.out.println("ENEMY SCHIET");
             enemy.shootProjectile(enemy);
         }
     }

@@ -15,7 +15,6 @@ import javafx.scene.input.KeyCode;
 import java.util.Set;
 
 public class Player extends Mob implements KeyListener, SceneBorderTouchingWatcher{
-    //private HealthText healthText;
 
     public Player(Coordinate2D location, ProjectileType weapon) {
         super("sprites/spaceship.png", location, weapon);

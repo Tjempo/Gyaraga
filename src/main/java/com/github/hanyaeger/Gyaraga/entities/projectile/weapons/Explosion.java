@@ -10,7 +10,7 @@ import com.github.hanyaeger.api.media.SoundClip;
 
 public class
 Explosion extends Projectile implements TimerContainer {
-    ExplosionTimer explosionTimer;
+    private ExplosionTimer explosionTimer;
 
     public Explosion(boolean firedByPlayer) {
         super("sprites/explosion.png", 25, 0, firedByPlayer, 1, 7);
