@@ -16,11 +16,6 @@ public class Dropper extends Enemy {
 
     @Override
     public void execAbility() {
-
-    }
-
-    @Override
-    public void execMovePattern() {
-
+        //nothing
     }
 }

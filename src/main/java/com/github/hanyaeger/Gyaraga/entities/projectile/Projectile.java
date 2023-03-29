@@ -4,6 +4,9 @@ import com.github.hanyaeger.Gyaraga.Gyaraga;
 import com.github.hanyaeger.Gyaraga.entities.mobs.Mob;
 import com.github.hanyaeger.Gyaraga.entities.mobs.Player;
 import com.github.hanyaeger.Gyaraga.entities.mobs.enemy.Enemy;
+import com.github.hanyaeger.Gyaraga.entities.mobs.enemy.enemies.Bomber;
+import com.github.hanyaeger.Gyaraga.entities.projectile.weapons.Explosion;
+import com.github.hanyaeger.Gyaraga.scenes.GameLevel;
 import com.github.hanyaeger.Gyaraga.scenes.GameLevel1;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collider;
@@ -40,8 +43,10 @@ public class Projectile extends DynamicSpriteEntity implements Collider, SceneBo
         }
         if (mob.health < 1) {
             mob.remove();
+            if (mob instanceof Bomber) {
+                ((Bomber) mob).execAbility();
+            }
         }
-
     }
 
     public void shoot(Coordinate2D location){

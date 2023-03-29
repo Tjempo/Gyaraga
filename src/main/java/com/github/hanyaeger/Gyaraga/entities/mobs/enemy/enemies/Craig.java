@@ -14,11 +14,6 @@ public class Craig extends Enemy {
 
     @Override
     public void execAbility() {
-
-    }
-
-    @Override
-    public void execMovePattern() {
-
+        //nothing
     }
 }

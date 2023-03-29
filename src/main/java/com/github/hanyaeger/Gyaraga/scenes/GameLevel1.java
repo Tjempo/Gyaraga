@@ -2,17 +2,11 @@ package com.github.hanyaeger.Gyaraga.scenes;
 
 import com.github.hanyaeger.Gyaraga.Gyaraga;
 import com.github.hanyaeger.Gyaraga.entities.mobs.Player;
-import com.github.hanyaeger.Gyaraga.entities.mobs.enemy.Enemy;
 import com.github.hanyaeger.Gyaraga.entities.mobs.enemy.enemies.Craig;
 import com.github.hanyaeger.Gyaraga.entities.text.HealthText;
 import com.github.hanyaeger.Gyaraga.entities.text.ScoreText;
 import com.github.hanyaeger.api.Coordinate2D;
-import com.github.hanyaeger.api.TimerContainer;
 import com.github.hanyaeger.api.entities.YaegerEntity;
-import com.github.hanyaeger.api.scenes.DynamicScene;
-
-import java.util.ArrayList;
-import java.util.Random;
 
 public class GameLevel1 extends GameLevel {
     public GameLevel1(Gyaraga gyaraga) {
@@ -32,7 +26,7 @@ public class GameLevel1 extends GameLevel {
     @Override
     public void setupEntities(){
         super.setupEntities();
-        var healthText = new HealthText(new Coordinate2D(10,10));
+        var healthText = new HealthText(new Coordinate2D(20,20));
         addEntity(healthText);
 
         var scoreText = new ScoreText

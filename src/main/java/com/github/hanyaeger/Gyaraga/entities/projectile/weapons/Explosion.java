@@ -8,7 +8,8 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.TimerContainer;
 import com.github.hanyaeger.api.media.SoundClip;
 
-public class Explosion extends Projectile implements TimerContainer {
+public class
+Explosion extends Projectile implements TimerContainer {
     ExplosionTimer explosionTimer;
 
     public Explosion(boolean firedByPlayer) {
@@ -21,7 +22,6 @@ public class Explosion extends Projectile implements TimerContainer {
     @Override
     public void setupTimers() {
         addTimer(explosionTimer);
-        explosionTimer.pause();
     }
 
     @Override
@@ -34,12 +34,10 @@ public class Explosion extends Projectile implements TimerContainer {
 
             var boomSound = new SoundClip("audio/vineBoom.mp3");
             boomSound.play();
-
-            explosionTimer.resume();
         }
 
         if (mob.health < 1) {
-            mob.setAnchorLocation(new Coordinate2D(-20, 20));
+            mob.remove();
         }
     }
 }

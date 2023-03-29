@@ -22,6 +22,4 @@ public abstract class Enemy extends Mob implements TimerContainer {
     }
 
     public abstract void execAbility();
-
-    public abstract void execMovePattern();
 }

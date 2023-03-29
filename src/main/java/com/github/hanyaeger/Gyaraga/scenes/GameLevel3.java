@@ -2,11 +2,16 @@ package com.github.hanyaeger.Gyaraga.scenes;
 
 import com.github.hanyaeger.Gyaraga.Gyaraga;
 import com.github.hanyaeger.Gyaraga.entities.mobs.Player;
+import com.github.hanyaeger.Gyaraga.entities.mobs.enemy.enemies.Aegi;
+import com.github.hanyaeger.Gyaraga.entities.mobs.enemy.enemies.Bomber;
 import com.github.hanyaeger.Gyaraga.entities.mobs.enemy.enemies.Craig;
+import com.github.hanyaeger.Gyaraga.entities.mobs.enemy.enemies.Dropper;
 import com.github.hanyaeger.Gyaraga.entities.text.HealthText;
 import com.github.hanyaeger.Gyaraga.entities.text.ScoreText;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.YaegerEntity;
+
+import java.net.CacheRequest;
 
 public class GameLevel3 extends GameLevel {
     public GameLevel3(Gyaraga gyaraga) {
@@ -25,7 +30,7 @@ public class GameLevel3 extends GameLevel {
 
     @Override
     public void setupEntities(){
-        var healthText = new HealthText(new Coordinate2D(10,10));
+        var healthText = new HealthText(new Coordinate2D(20,20));
         addEntity(healthText);
 
         var scoreText = new ScoreText
@@ -34,23 +39,43 @@ public class GameLevel3 extends GameLevel {
 
         player = new Player
                 (new Coordinate2D(getWidth() / 2, getHeight() - 100 ), gyaraga.selectedWeapon);
+        enemies.add(new Aegi
+                (new Coordinate2D((getWidth() - (75 * 1) - 50), (400)),
+                        getRandomShootInterval(1000, 10000)));
+        enemies.add(new Aegi
+                (new Coordinate2D((getWidth() - (75 * 2) - 50), (400)),
+                        getRandomShootInterval(1000, 10000)));
+        enemies.add(new Aegi
+                (new Coordinate2D((getWidth() - (75 * 3) - 50), (400)),
+                        getRandomShootInterval(1000, 10000)));
+        enemies.add(new Aegi
+                (new Coordinate2D((getWidth() - (75 * 4) - 50), (400)),
+                        getRandomShootInterval(1000, 10000)));
+        enemies.add(new Aegi
+                (new Coordinate2D((getWidth() - (75 * 5) - 50), (400)),
+                        getRandomShootInterval(1000, 4000)));
+
+        //Droppers
+
+        enemies.add(new Dropper
+                (new Coordinate2D((getWidth() - (110 * 1) - 50), (300)),
+                        getRandomShootInterval(1000, 4000)));
+        enemies.add(new Dropper
+                (new Coordinate2D((getWidth() - (110 * 2) - 50), (300)),
+                        getRandomShootInterval(1000, 4000)));
+        enemies.add(new Dropper
+                (new Coordinate2D((getWidth() - (110 * 3)- 50), (300)),
+                        getRandomShootInterval(1000, 4000)));
+
+        enemies.add(new Bomber
+                (new Coordinate2D(((getWidth() / 2) - 50), (150)),
+                getRandomShootInterval(1000, 4000)));
+
         enemies.add(new Craig
-                (new Coordinate2D((getWidth() / 8) * 1, (getHeight() / 21) * 4),
+                (new Coordinate2D(((getWidth() / 2)), (150)),
                         getRandomShootInterval(1000, 4000)));
         enemies.add(new Craig
-                (new Coordinate2D((getWidth() / 8) * 2, (getHeight() / 21) * 11),
-                        getRandomShootInterval(1000, 4000)));
-        enemies.add(new Craig
-                (new Coordinate2D((getWidth() / 8) * 3, (getHeight() / 21) * 14),
-                        getRandomShootInterval(1000, 4000)));
-        enemies.add(new Craig
-                (new Coordinate2D((getWidth() / 8) * 4, (getHeight() / 21) * 6),
-                        getRandomShootInterval(1000, 4000)));
-        enemies.add(new Craig
-                (new Coordinate2D((getWidth() / 8) * 5, (getHeight() / 21) * 2),
-                        getRandomShootInterval(1000, 4000)));
-        enemies.add(new Craig
-                (new Coordinate2D((getWidth() / 8) * 6, (getHeight() / 21) * 9),
+                (new Coordinate2D(((getWidth() / 2) - 100), (150)),
                         getRandomShootInterval(1000, 4000)));
 
         addEntity(player);

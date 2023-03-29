@@ -21,8 +21,6 @@ public class Player extends Mob implements KeyListener, SceneBorderTouchingWatch
         super("sprites/spaceship.png", location, weapon);
         setMotion(2, 270d);
         this.health = 100;
-
-        //this.healthText = healthText;
     }
 
     @Override

@@ -12,8 +12,6 @@ public class HealthText extends TextEntity {
 
         setFont(Font.font("OCR A Extended", FontWeight.NORMAL, 30));
         setFill(Color.WHITE);
-        setStrokeWidth(3);
-        setStrokeColor(Color.BLACK);
 
     }
 
