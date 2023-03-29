@@ -12,12 +12,12 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-public class QuitButton extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
+public class BackButton extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
 
     private Gyaraga gyaraga;
 
-    public QuitButton(Coordinate2D initialLocation, Gyaraga gyaraga){
-        super(initialLocation,"Quit");
+    public BackButton(Coordinate2D initialLocation, Gyaraga gyaraga){
+        super(initialLocation,"Back");
         this.gyaraga = gyaraga;
         setFill(Color.GRAY);
         setFont(Font.font("OCR A Extended", FontWeight.BOLD, 30));
@@ -25,7 +25,7 @@ public class QuitButton extends TextEntity implements MouseButtonPressedListener
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        gyaraga.quit();
+        gyaraga.setActiveScene(0);
     }
     @Override
     public void onMouseEntered(){

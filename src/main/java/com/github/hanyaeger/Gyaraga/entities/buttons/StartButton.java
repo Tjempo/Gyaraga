@@ -19,13 +19,12 @@ public class StartButton extends TextEntity implements MouseButtonPressedListene
         super(initialLocation,"*-=- Start -=-*");
         this.gyaraga = gyaraga;
         setFill(Color.PURPLE);
-        setFont(Font.font("Roboto", FontWeight.BOLD, 30));
+        setFont(Font.font("OCR A Extended", FontWeight.BOLD, 30));
     }
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        gyaraga.setActiveScene(1);
-
+        gyaraga.setActiveScene(gyaraga.selectedLevelMain);
     }
     @Override
     public void onMouseEntered(){
