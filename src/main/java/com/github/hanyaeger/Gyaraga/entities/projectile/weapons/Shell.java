@@ -7,8 +7,7 @@ import com.github.hanyaeger.api.Coordinate2D;
 public class Shell extends Projectile {
     public int number;
 
-    public Shell(boolean firedByPlayer, int number) {
+    public Shell(boolean firedByPlayer) {
         super("sprites/shell.png", 5, 5, firedByPlayer, 1, 1);
-        this.number = number;
     }
 }

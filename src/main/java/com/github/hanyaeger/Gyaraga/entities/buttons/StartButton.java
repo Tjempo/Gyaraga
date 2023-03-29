@@ -24,8 +24,7 @@ public class StartButton extends TextEntity implements MouseButtonPressedListene
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        gyaraga.setActiveScene(2);
-
+        gyaraga.setActiveScene(gyaraga.selectedLevelMain);
     }
     @Override
     public void onMouseEntered(){

@@ -4,6 +4,7 @@ import com.github.hanyaeger.Gyaraga.entities.projectile.Projectile;
 import com.github.hanyaeger.Gyaraga.entities.projectile.ProjectileFactory;
 import com.github.hanyaeger.Gyaraga.entities.projectile.ProjectileType;
 import com.github.hanyaeger.Gyaraga.entities.projectile.weapons.Laser;
+import com.github.hanyaeger.Gyaraga.scenes.GameLevel;
 import com.github.hanyaeger.Gyaraga.scenes.GameLevel1;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collided;
@@ -16,6 +17,7 @@ import java.util.Optional;
 
 public class Mob extends DynamicSpriteEntity implements Collided{
     public int health;
+
     protected ProjectileType weapon;
 
     public Mob(String spriteDir, Coordinate2D location, ProjectileType weapon){
@@ -33,11 +35,11 @@ public class Mob extends DynamicSpriteEntity implements Collided{
             Projectile shell3 = ProjectileFactory.getProjectile(weapon, shooter instanceof Player);
             Projectile shell4 = ProjectileFactory.getProjectile(weapon, shooter instanceof Player);
             Projectile shell5 = ProjectileFactory.getProjectile(weapon, shooter instanceof Player);
-            GameLevel1.instance.addEntity(shell1);
-            GameLevel1.instance.addEntity(shell2);
-            GameLevel1.instance.addEntity(shell3);
-            GameLevel1.instance.addEntity(shell4);
-            GameLevel1.instance.addEntity(shell5);
+            GameLevel.instance.addEntity(shell1);
+            GameLevel.instance.addEntity(shell2);
+            GameLevel.instance.addEntity(shell3);
+            GameLevel.instance.addEntity(shell4);
+            GameLevel.instance.addEntity(shell5);
             shell1.shoot(new Coordinate2D(getLocationInScene().getX() + 22, getLocationInScene().getY()));
             shell2.shoot(new Coordinate2D(getLocationInScene().getX() + 11, getLocationInScene().getY()));
             shell3.shoot(getLocationInScene());
@@ -45,7 +47,7 @@ public class Mob extends DynamicSpriteEntity implements Collided{
             shell5.shoot(new Coordinate2D(getLocationInScene().getX() - 22, getLocationInScene().getY()));
         } else {
             Projectile bullet = ProjectileFactory.getProjectile(weapon, shooter instanceof Player);
-            GameLevel1.instance.addEntity(bullet);
+            GameLevel.instance.addEntity(bullet);
             bullet.shoot(getLocationInScene());
         }
     }

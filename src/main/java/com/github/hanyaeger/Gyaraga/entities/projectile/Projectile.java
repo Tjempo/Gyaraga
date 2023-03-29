@@ -1,8 +1,10 @@
 package com.github.hanyaeger.Gyaraga.entities.projectile;
 
+import com.github.hanyaeger.Gyaraga.Gyaraga;
 import com.github.hanyaeger.Gyaraga.entities.mobs.Mob;
 import com.github.hanyaeger.Gyaraga.entities.mobs.Player;
 import com.github.hanyaeger.Gyaraga.entities.mobs.enemy.Enemy;
+import com.github.hanyaeger.Gyaraga.scenes.GameLevel1;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
@@ -14,6 +16,7 @@ import com.github.hanyaeger.api.scenes.SceneBorder;
 public class Projectile extends DynamicSpriteEntity implements Collider, SceneBorderCrossingWatcher {
     protected int damage;
     protected int speed;
+    private Gyaraga gyaraga;
     public boolean firedByPlayer;
 
     public Projectile(String spriteDir, int damage, int speed, boolean firedByPlayer, int rows, int colums) {
@@ -38,15 +41,13 @@ public class Projectile extends DynamicSpriteEntity implements Collider, SceneBo
         if (mob.health < 1) {
             mob.remove();
         }
+
     }
 
     public void shoot(Coordinate2D location){
         setAnchorLocation(location);
         System.out.println(location);
         System.out.println(speed);
-        if (ProjectileFactory.getProjectileType(this) == ProjectileType.SHELL) {
-
-        }
         if (firedByPlayer) {
             setMotion(speed, 180d);
         } else {

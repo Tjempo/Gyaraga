@@ -22,12 +22,12 @@ public class WeaponButton extends TextEntity implements MouseButtonPressedListen
     public int WeaponNumber;
 
 
-    public WeaponButton(Coordinate2D initialLocation, Gyaraga gyaraga, String weaponNR) {
-        super(initialLocation, weaponNR);
+    public WeaponButton(Coordinate2D initialLocation, Gyaraga gyaraga, String weaponNR, String weaponName) {
+        super(initialLocation, weaponName);
         this.WeaponNumber = Integer.parseInt(weaponNR);
         this.gyaraga = gyaraga;
         setFill(Color.WHITE);
-        setFont(Font.font("OCR A Extended", FontWeight.BOLD, 30));
+        setFont(Font.font("OCR A Extended", FontWeight.BOLD, 20));
     }
 
     @Override

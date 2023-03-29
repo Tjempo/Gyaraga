@@ -1,11 +1,8 @@
 package com.github.hanyaeger.Gyaraga;
 
-import com.github.hanyaeger.Gyaraga.entities.projectile.Projectile;
+import com.github.hanyaeger.Gyaraga.entities.mobs.Mob;
 import com.github.hanyaeger.Gyaraga.entities.projectile.ProjectileType;
-import com.github.hanyaeger.Gyaraga.entities.projectile.weapons.Laser;
-import com.github.hanyaeger.Gyaraga.scenes.GameLevel1;
-import com.github.hanyaeger.Gyaraga.scenes.LevelSelect;
-import com.github.hanyaeger.Gyaraga.scenes.WeaponSelect;
+import com.github.hanyaeger.Gyaraga.scenes.*;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
 
@@ -17,6 +14,8 @@ public class Gyaraga extends YaegerGame {
     }
 
     public ProjectileType selectedWeapon = ProjectileType.LASER;
+    public int selectedLevelMain = 1;
+
 
     @Override
     public void setupGame() {
@@ -29,11 +28,10 @@ public class Gyaraga extends YaegerGame {
         addScene(0, new LevelSelect(this));
         addScene(1, new WeaponSelect(this));
         addScene(2, new GameLevel1(this));
-//        addScene(3, new GameLevel2());
-//        addScene(4, new GameLevel3());
-//        addScene(5, new GameLevel4());
-//        addScene(5, new GameLevel5()); //Boss level
-//        addScene(6, new EndScreen()); //End Screen
-    }
+        addScene(3, new GameLevel2(this));
+        addScene(4, new GameLevel3(this));
+        addScene(5, new WinScreen(this));
+        addScene(6, new LoserScreen(this));
 
+    }
 }

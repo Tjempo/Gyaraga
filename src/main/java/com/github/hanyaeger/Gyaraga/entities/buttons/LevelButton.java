@@ -1,6 +1,7 @@
 package com.github.hanyaeger.Gyaraga.entities.buttons;
 
 import com.github.hanyaeger.Gyaraga.Gyaraga;
+import com.github.hanyaeger.Gyaraga.scenes.GameLevel;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
@@ -17,7 +18,7 @@ public class LevelButton extends TextEntity implements MouseButtonPressedListene
     private Gyaraga gyaraga;
     public String Slev;
     public int NLev;
-    public int levelNumber;
+    //public int levelNummer;
 
 
     public LevelButton(Coordinate2D initialLocation, Gyaraga gyaraga, String levelNR){
@@ -27,7 +28,7 @@ public class LevelButton extends TextEntity implements MouseButtonPressedListene
 
         this.gyaraga = gyaraga;
         setFill(Color.WHITE);
-        setFont(Font.font("OCR A Extended", FontWeight.BOLD, 30));
+        setFont(Font.font("OCR A Extended", FontWeight.BOLD, 35));
     }
 
     @Override
@@ -35,27 +36,17 @@ public class LevelButton extends TextEntity implements MouseButtonPressedListene
         switch (NLev) {
             case 1 -> {
                 System.out.println("Level 1");
-                levelNumber = 1;
+                gyaraga.selectedLevelMain = 2;
                 goToWeaponSelect();
             }
             case 2 -> {
                 System.out.println("Level 2");
-                levelNumber = 4;
+                gyaraga.selectedLevelMain = 3;
                 goToWeaponSelect();
             }
             case 3 -> {
                 System.out.println("Level 3");
-                levelNumber = 3;
-                goToWeaponSelect();
-            }
-            case 4 -> {
-                System.out.println("Level 4");
-                levelNumber = 4;
-                goToWeaponSelect();
-            }
-            case 5 -> {
-                System.out.println("Level 5");
-                levelNumber = 5;
+                gyaraga.selectedLevelMain = 4;
                 goToWeaponSelect();
             }
         }
@@ -75,9 +66,5 @@ public class LevelButton extends TextEntity implements MouseButtonPressedListene
     public void onMouseExited(){
         setFill(Color.WHITE);
         setCursor(Cursor.DEFAULT);
-    }
-
-    public int getLevelNumber() {
-        return levelNumber;
     }
 }

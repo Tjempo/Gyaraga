@@ -17,11 +17,4 @@ public class ProjectileFactory {
         }
         return null;
     }
-
-    public static ProjectileType getProjectileType(Projectile projectile) {
-        if (projectile instanceof Shell) {
-            return ProjectileType.SHELL;
-        }
-        return null;
-    }
 }

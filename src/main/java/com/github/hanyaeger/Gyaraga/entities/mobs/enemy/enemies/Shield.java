@@ -6,8 +6,8 @@ import com.github.hanyaeger.Gyaraga.entities.projectile.weapons.Laser;
 import com.github.hanyaeger.api.Coordinate2D;
 
 public class Shield extends Enemy {
-    public Shield(String spriteDir, Coordinate2D location, int health) {
-        super("sprites/shield.png", location, null);
+    public Shield(Coordinate2D location, int shootInterval) {
+        super("sprites/shield.png", location, null, shootInterval);
         this.health = 20;
     }
 
