@@ -1,6 +1,7 @@
 package com.github.hanyaeger.Gyaraga.entities.buttons;
 
 import com.github.hanyaeger.Gyaraga.Gyaraga;
+import com.github.hanyaeger.Gyaraga.scenes.GameLevel;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
@@ -15,21 +16,46 @@ import javafx.scene.text.FontWeight;
 public class LevelButton extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
 
     private Gyaraga gyaraga;
-    public String Nlev;
+    public String Slev;
+    public int NLev;
+    //public int levelNummer;
 
 
     public LevelButton(Coordinate2D initialLocation, Gyaraga gyaraga, String levelNR){
         super(initialLocation,levelNR);
-        Nlev = levelNR;
+        Slev = levelNR;
+        NLev = Integer.parseInt(levelNR);
+
         this.gyaraga = gyaraga;
         setFill(Color.WHITE);
-        setFont(Font.font("Roboto", FontWeight.BOLD, 30));
+        setFont(Font.font("OCR A Extended", FontWeight.BOLD, 35));
     }
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        System.out.println("Level " + Nlev);
+        switch (NLev) {
+            case 1 -> {
+                System.out.println("Level 1");
+                gyaraga.selectedLevelMain = 2;
+                goToWeaponSelect();
+            }
+            case 2 -> {
+                System.out.println("Level 2");
+                gyaraga.selectedLevelMain = 3;
+                goToWeaponSelect();
+            }
+            case 3 -> {
+                System.out.println("Level 3");
+                gyaraga.selectedLevelMain = 4;
+                goToWeaponSelect();
+            }
+        }
     }
+
+    private void goToWeaponSelect() {
+        gyaraga.setActiveScene(1);
+    }
+
     @Override
     public void onMouseEntered(){
         setFill(Color.WHITESMOKE);
